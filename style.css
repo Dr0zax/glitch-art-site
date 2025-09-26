@@ -1,0 +1,52 @@
+/* Basic page layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: #111;
+  color: #eee;
+}
+
+main {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+#app {
+  width: 100%;
+  max-width: 1100px; /* prevent extremely wide canvases */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Make the canvas scale down to fit the viewport while preserving aspect ratio. */
+canvas {
+  display: block;       /* remove inline baseline whitespace behavior */
+  max-width: 100%;      /* don't overflow the container */
+  width: auto;          /* let the browser compute width from intrinsic aspect ratio */
+  height: auto;         /* preserve aspect ratio */
+  max-height: calc(100vh - 220px); /* leave room for controls */
+  box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+  background: #222;
+  border-radius: 6px;
+}
+
+/* Controls layout */
+#app > input, #app > select, #app > button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  color: inherit;
+}
+
+@media (max-width: 420px) {
+  #app { padding: 0 0.5rem; }
+  canvas { max-height: calc(100vh - 180px); }
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>glitch-art-site</title>
+  </head>
+  <body>
+    <main>
+      <div id="app">
+        <form action="">
+          <h1>Pixel Sorter</h1>
+          <p>Upload an image, choose a sorting direction and mode, then click "Apply" to see the effect.</p>
+          <input id="imgInput" type="file" />
+          <label for="direction">Direction:</label>
+          <select name="direction" id="directionSelect">
+            <option value="horizontal">Horizontal</option>
+            <option value="vertical">Vertical</option>
+          </select>
+          <label for="sortMode">Sort Mode:</label>
+          <select name="sortMode" id="sortSelect">
+            <option value="brightness">Brightness</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+          </select>
+          <button id="applyButton" type="button">Apply</button>
+        </form>
+        <canvas id="canvas"></canvas>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
