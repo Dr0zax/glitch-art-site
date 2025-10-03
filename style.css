@@ -9,20 +9,15 @@ html, body {
 
 main {
   min-height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 2rem;
   box-sizing: border-box;
 }
 
 #app {
   width: 100%;
-  max-width: 1100px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
-  align-items: center;
 }
 
 canvas {
@@ -34,15 +29,75 @@ canvas {
   background: #222;
 }
 
-#app > input, #app > select, #app > button {
-  padding: 0.5rem 0.75rem;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  min-width: 200px;
+  border: 1px solid #3f3f3f;
+  padding: 1rem;
   border-radius: 4px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.02);
-  color: inherit;
+
+  input, select, button {
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    border: 1px solid #3f3f3f;
+    background: #222;
+    color: white;
+  }
+
+  select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSJ3aGl0ZSI+PHBhdGggZD0iTTEyIDE1LjMxbC02LjY2Ny02LjY2NyAxLjQxNC0xLjQxNEwxMiAxMi41OTNsNS4yNTMtNS4yNTMgMS40MTQgMS40MTRMMTIgMTUuMzF6Ii8+PC9zdmc+');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1rem;
+    padding-right: 2rem;
+    background-color: #3f3f3f;
+  }
+
+  select, select option {
+    color: #eee; 
+    background-color: #222;
+  }
+
+  #thresholdContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+
+    input[type="range"] {
+      flex: 1;
+    }
+
+    #thresholdValue {
+      min-width: 2rem;
+      background-color: #222;
+      border: 1px solid #3f3f3f;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      text-align: center;
+    }
+  }
+
+  button:hover {
+    cursor: pointer;
+    background: rgba(255,255,255,0.02);
+  }
 }
 
-@media (max-width: 420px) {
-  #app { padding: 0 0.5rem; }
+@media (max-width: 1000px) {
+  #app { 
+    padding: 0 0.5rem; 
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form {
+    width: 100%;
+    max-width: 400px;
+  }
   canvas { max-height: calc(100vh - 180px); }
 }

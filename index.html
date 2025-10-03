@@ -9,11 +9,12 @@
   </head>
   <body>
     <main>
+      <h1>Pixel Sorter</h1>
+      <p>Upload an image, choose a sorting direction and mode, set the threshold from 0-255, then click "Apply" to see the effect.</p>
       <div id="app">
         <form action="">
-          <h1>Pixel Sorter</h1>
-          <p>Upload an image, choose a sorting direction and mode, then click "Apply" to see the effect.</p>
-          <input id="imgInput" type="file" />
+          <label for="image">Image:</label>
+          <input name="image" id="imgInput" type="file" />
           <label for="direction">Direction:</label>
           <select name="direction" id="directionSelect">
             <option value="horizontal">Horizontal</option>
@@ -26,12 +27,22 @@
             <option value="green">Green</option>
             <option value="blue">Blue</option>
           </select>
-          <button id="applyButton" type="button">Apply</button>
-          <button id="downloadButton" type="button">Download</button>
+          <label for="threshold">Threshold:</label>
+          <div id="thresholdContainer">
+            <span id="thresholdValue">0</span>
+            <input name="threshold" id="thresholdInput" type="range" value="0" min="0" max="255" />
+          </div>
+          <div>
+            <button id="applyButton" type="button">Apply</button>
+            <button id="downloadButton" type="button">Download</button>
+          </div>
         </form>
         <canvas id="canvas"></canvas>
       </div>
     </main>
+    <footer>
+      <p>&copy;2025 Andrew Jeppesen</p>
+    </footer>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
