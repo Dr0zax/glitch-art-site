@@ -5,9 +5,8 @@ A web application for creating and sharing glitch art. Users can upload images, 
 ## Features
 
 - Upload images
-- Apply various glitch effects
+- Apply pixel sorting
 - Download or share glitch art
-- Responsive design
 
 ## Getting Started
 
@@ -29,10 +28,6 @@ A web application for creating and sharing glitch art. Users can upload images, 
 - HTML, CSS, TypeScript
 - Node.js
 - Vite
-
-## Contributing
-
-Contributions are welcome! Please open issues or submit pull requests.
 
 ## License
 
