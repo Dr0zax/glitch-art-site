@@ -26,9 +26,9 @@ A web application for creating and sharing glitch art. Users can upload images, 
 
 ## Technologies Used
 
-- HTML, CSS, JavaScript
-- React (or your chosen framework)
+- HTML, CSS, TypeScript
 - Node.js
+- Vite
 
 ## Contributing
 
